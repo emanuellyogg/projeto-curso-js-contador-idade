@@ -20,6 +20,18 @@ section {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.596);
 }
 
+section div#img {
+  text-align: center;
+}
+
+section div img {
+  width: 200px;
+  height: auto;
+  border-radius: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
 footer {
   color: white;
   text-align: center;

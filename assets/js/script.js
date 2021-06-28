@@ -11,50 +11,52 @@ function verificar() {
     var fsex = document.getElementsByName('radsex');
     var idade = ano - Number(fano.value);
     var gênero = ''
-    //criando uma TAG (igual do HTML) que recebe id com valor foto
-    var img = document.createElement('img');
-    img.setAttribute('id', 'foto');
+
+    // //criando uma TAG (igual do HTML) que recebe id com valor foto
+    // var img = document.createElement('img');
+    // img.setAttribute('id', 'foto');
 
 
     if (fsex[0].checked) {
       gênero = 'homem';
       if (idade >= 0 && idade <= 11) {
         //criança
-        img.setAttribute('src', 'assets/img/menino.jpg')
+        pessoa('menino.jpg')
       } else if (idade >= 12 && idade < 18) {
         // jovem
-        img.setAttribute('src', 'assets/img/jovemele.jpg')
+        pessoa('jovemele.jpg')
       } else if (idade >= 18 && idade < 60) {
         // adulto
-        img.setAttribute('src', 'assets/img/homem.jpg')
+        pessoa('homem.jpg')
       } else {
         // idoso
-        img.setAttribute('src', 'assets/img/idoso.jpg')
+        pessoa('idoso.jpg')
       }
 
     } else if (fsex[1].checked) {
       gênero = 'mulher';
       if (idade >= 0 && idade <= 11) {
         //criança
-        img.setAttribute('src', 'assets/img/menina.jpg')
+        pessoa('menina.jpg')
       } else if (idade >= 12 && idade < 18) {
         // jovem
-        img.setAttribute('src', 'assets/img/jovemela.jpg')
+        pessoa('jovemela.jpg')
       } else if (idade >= 18 && idade < 60) {
         // adulto
-        img.setAttribute('src', 'assets/img/mulher.jpg')
+        pessoa('mulher.jpg')
       } else {
         // idoso
-        img.setAttribute('src', 'assets/img/idosa.jpg')
+        pessoa('idosa.jpg')
       }
     }
     res.style.textAlign = 'center';
     res.innerHTML = `Detectamos ${gênero} com ${idade} anos`
-    //adicionar um elemento "filho", para aparecer a imagem
-    res.appendChild(img)
-    img.style.width = '200px';
-    img.style.height = 'auto';
-    img.style.borderRadius = '100%'
-    img.style.padding = '15px'
+    // //adicionar um elemento "filho", para aparecer a imagem
+    // res.appendChild(img)
+
+    function pessoa(imagem) {
+      let img = document.querySelector('img#imagem');
+      img.src = 'assets/img/' + imagem;
+    }
   }
 }
