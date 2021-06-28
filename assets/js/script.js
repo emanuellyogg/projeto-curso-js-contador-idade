@@ -16,6 +16,8 @@ function verificar() {
     // var img = document.createElement('img');
     // img.setAttribute('id', 'foto');
 
+    res.style.textAlign = 'center';
+    res.innerHTML = `Detectamos ${gênero} com ${idade} anos`;
 
     if (fsex[0].checked) {
       gênero = 'homem';
@@ -57,14 +59,11 @@ function verificar() {
       // idoso
       pessoa('idosa.jpg');
     }
-    res.style.textAlign = 'center';
-    res.innerText = `Detectamos ${gênero} com ${idade} anos`;
     // //adicionar um elemento "filho", para aparecer a imagem
     // res.appendChild(img)
-
-    function pessoa(imagem) {
-      let img = document.getElementById('figura');
-      img.src = 'assets/img/' + imagem;
-    }
   }
+}
+function pessoa(imagem) {
+  let img = document.querySelector('img');
+  img.src = 'assets/img/' + imagem;
 }
