@@ -18,7 +18,7 @@ function verificar() {
 
     if (fsex[0].checked) {
       gênero = 'homem';
-      if (idade >= 0 && idade < 11) {
+      if (idade >= 0 && idade <= 11) {
         //criança
         img.setAttribute('src', '../assets/img/menino.jpg')
       } else if (idade >= 12 && idade < 18) {
@@ -34,7 +34,7 @@ function verificar() {
 
     } else if (fsex[1].checked) {
       gênero = 'mulher';
-      if (idade >= 0 && idade < 11) {
+      if (idade >= 0 && idade <= 11) {
         //criança
         img.setAttribute('src', '../assets/img/menina.jpg')
       } else if (idade >= 12 && idade < 18) {
